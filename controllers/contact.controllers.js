@@ -29,18 +29,19 @@ exports.updateContact = async (req, res) => {
 };
 //******************GETALLCONTACT************************** */
 exports.getAllContact = async (req, res) => {
+  let s = req.query.a;
+  let newName = new RegExp(s, "i");
+  console.log({ s, newName });
   try {
-    const { s } = req.params;
-    if (s !== "all") {
+    if (s) {
       let result = await Contact.find({
-        name: new RegExp(s),
+        name: newName,
       });
-      res.status(200).json({ message: "all contact", result });
-    } else {
-      let result = await Contact.find();
       res.status(200).json({ message: "all contact", result });
       return;
     }
+    let result = await Contact.find();
+    res.status(200).json({ message: "all contact", result });
   } catch (error) {
     res.status(400).send({ message: "failed " });
   }

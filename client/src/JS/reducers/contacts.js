@@ -16,7 +16,7 @@ export const contactReducer = (state = initialState, { type, payload }) => {
     case GET_CONTACT_LOAD:
       return { ...state, loadContacts: true };
     case GET_CONTACT_SUCCESS:
-      return { ...state, contacts: payload.result, loadContacts: false };
+      return { ...state, contacts: payload, loadContacts: false };
     case GET_CONTACT_FAIL:
       return { ...state, error: payload, loadContacts: false };
     case GET_CONTACT:

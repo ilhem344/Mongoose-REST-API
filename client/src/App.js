@@ -8,7 +8,7 @@ import { toggleFalse } from "./JS/actions/edit";
 import { useDispatch } from "react-redux";
 function App() {
   const [activeItem, setactiveItem] = useState("home");
-  const [searchItem, setsearchItem] = useState("all");
+  const [searchItem, setsearchItem] = useState("");
   const handleSearchChange = (e) => {
     setsearchItem(e.target.value);
   };
@@ -57,7 +57,6 @@ function App() {
                 handleSearchChange(e);
               }}
               value={searchItem}
-              defaultValue={"all"}
               showNoResults={false}
             />
           </Menu.Item>

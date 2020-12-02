@@ -11,8 +11,8 @@ import axios from "axios";
 export const getContacts = (s) => async (dispatch) => {
   dispatch({ type: GET_CONTACT_LOAD });
   try {
-    let result = await axios.get(`/api/contact/name/${s}`);
-    dispatch({ type: GET_CONTACT_SUCCESS, payload: result.data });
+    let result = await axios.get(`/api/contact/name/?a=${s}`);
+    dispatch({ type: GET_CONTACT_SUCCESS, payload: result.data.result });
   } catch (error) {
     dispatch({ type: GET_CONTACT_FAIL, payload: error });
     console.log(error);

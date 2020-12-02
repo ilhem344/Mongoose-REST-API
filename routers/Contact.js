@@ -11,19 +11,20 @@ router.get("/test", (req, res) => {
 //path localhost:8000/api/contact/
 // add a conatct
 //params body
+router.get("/name/:a?", controllers.getAllContact);
+
 router.post("/", controllers.postContact);
 
 //*********************************************************** */
 //@method getallcontact
 //path localhost:8000/api/contact/name/:s
 // get all conatct
-router.get("/name/:s", controllers.getAllContact);
 
 //*********************************************************** */
 //@method get contact byid
 //path localhost:8000/api/contact/:id
 // get one conatct by id
-router.get("/:id", controllers.getContactById);
+// router.get("/:id", controllers.getContactById);
 
 //************************************************************* */
 //@method Delete contact byid

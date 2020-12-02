@@ -1,5 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const queryParams = require("express-query-params");
+
 const app = express();
 require("dotenv").config();
 const dbConnection = require("./config/dbConnection");
@@ -13,5 +15,7 @@ app.listen(process.env.PORT, (err) => {
 });
 //Parsing data
 app.use(express.json());
+app.use(queryParams());
+
 //routers
 app.use("/api/contact", require("./routers/Contact"));
