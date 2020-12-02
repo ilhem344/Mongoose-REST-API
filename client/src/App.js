@@ -23,12 +23,11 @@ function App() {
         <Menu pointing>
           <Link to="/">
             <Menu.Item>
-              {" "}
               <Header as="h2">
                 <Image
                   circular
                   src="https://react.semantic-ui.com/images/avatar/large/patrick.png"
-                />{" "}
+                />
                 Contact List
               </Header>
             </Menu.Item>
